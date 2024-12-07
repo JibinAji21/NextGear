@@ -6,14 +6,44 @@ body{
     background-color: black;
 }
 .login_div{
-    color:yellow;
+    color: gold;
 }
 input[type=text],select{
+    /* background-color: gold; */
     width: 60%;
-    height: 25px;
-    /* padding: 12px 20px; */
+    /* height: 25px; */
+    padding: 12px 25px;
     margin: 8px 0;
     border-radius: 5px;
     display: inline-block;
     border: none;
+    box-sizing: border-box;
+    /* opacity: 0.4; */
 }
+
+.pswd{
+    width: 60%;
+    /* height: 25px; */
+    padding: 12px 25px;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+}
+
+input[type=submit],select{
+    width: 40%;
+    /* height: 25px; */
+    padding: 10px 6px;
+    margin: 8px 0;
+    border-radius: 5px;
+    display: inline-block;
+    border: none;
+    box-sizing: border-box;
+}
+input[type=text]:hover{
+    background-color: gold;
+}
+
+
