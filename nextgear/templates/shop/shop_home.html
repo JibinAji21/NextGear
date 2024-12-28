@@ -20,7 +20,7 @@
                 <a class="nav-link" href="javascript:void(0)">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="javascript:void(0)">ADD PRODUCT</a>
+                <a class="nav-link" href="add_product">ADD PRODUCT</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="javascript:void(0)">BOOKINGS</a>
@@ -44,16 +44,17 @@
             {% for pro in products %}
             <div class="col-lg-4">
                 <div class="card" style="width:400px">
-                    <img src="static/image/nextgearlogo.png" alt="" class="card-img-top" style="width: 100%;">
+                    <img src="{{pro.img.url}}" alt="" class="card-img-top" style="width: 100%;">
                     <div class="card-body">
-                        <h4 class="card-title">John Doe</h4>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
-                        <p class="card-text">Some example text some example text. John Doe is an architect and engineer</p>
+                        <h4 class="card-title">{{pro.product_name}}</h4>
+                        <p class="card-text fw-light fw-secondary">{{pro.price}}</p>
+                        <p class="card-text"><b>{{pro.offer_price}}</b></p>
+                        <p class="card-text mt-3">{{pro.dis}}</p>
                         <div>
-                            <a href="" class="btn">EDIT</a>
-                            <a href="" class="btn">DELETE</a>
+                            <a href="edit_product/{{pro.pk}}" class="btn">EDIT</a>
+                            <a href="delete_product/{{pro.pk}}" class="btn">DELETE</a>
                         </div>
-                        <p class="card-text mt-3">dis</p>
+                        
                     </div>
                 </div>
             </div>
