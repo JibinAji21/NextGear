@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns=[
-    path('',views.shop_login),
+    path('shop_login',views.shop_login),
     path('logout',views.shop_logout),
 
 
@@ -48,8 +48,9 @@ urlpatterns=[
 
 
     # ...........................user..................................................
-    path('user_home',views.user_home),
+    path('',views.user_home),
     path('register',views.register),
     path('view_product/<pid>',views.view_product),
+    path('add_to_cart/<pid>',views.add_to_cart)
 
 ]
