@@ -6,6 +6,12 @@
     <title>Document</title>
     {% load static %}
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <style>
+        .reg{
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <div class="login_div">
@@ -16,7 +22,8 @@
             <p><b>PASSWORD: </b><input type="password" name="password" placeholder="password" class="pswd"></p>
             <input type="submit" value="login">
         </form>
-        <a href="register">Register</a>
+        <p>New customer ? <a href="register" class="reg">Register</a> </p>
+        
     </div>
     
 </body>
