@@ -4,21 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+         * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+    
+        .edit_body{
+            background-color: goldenrod;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .edit_div{
+            
+            text-align: center;
+        }
+        
+        .edit_pro{
+            font-size: 30px;
+            color:black;
+            font-weight: 750;
+            margin-bottom:35px ;
+        }
+        
+       
+        .input-tag{
+            margin-bottom: 25px;
+        }
+        
+        input[type="text"],
+        input[type="number"],
+        input[type="submit"] {
+            width: 100%;    
+            padding:15px;
+            border-radius:9px;
+            border: 2px solid white;
+        } 
+
+        input[type="submit"] {
+            background-color: black;
+            color: goldenrod;
+            padding: 18px;
+            border:none;
+            border-radius: 9px;
+            font-weight: bold;
+            font-size: 22px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: rgb(92, 92, 92) ;
+        }
+    </style>
 </head>
-<body>
-    <div class="main_div">
-        <h2 class="add_pro">Edit Product</h2>
-        <form action="" method="post" enctype="multipart/form-data">
+<body class="edit_body">
+    <form action="" method="post">
+        <div class="edit_div">
+            <h2 class="edit_pro">Edit Product</h2>
             {% csrf_token %}
-            <b>Product id : </b><p><input type="text" name="pro_id" id="" placeholder="product id" class="p_id" value="{{data.product_id}}"></p>
-            <b>Product name : </b><p><input type="text" name="name" id="" placeholder="product name" value="{{data.product_name}}"></p>
-            <b>Product discription : </b><p><input type="text" name="discription" id="" placeholder="discription" value="{{data.dis}}"></p>
-            <b>Price : </b><p><input type="number" name="price" id="" placeholder="price" value="{{data.price}}"></p>
-            <b>Offer Price : </b><p><input type="number" name="o_price" id="" placeholder="offer price" value="{{data.offer_price}}"></p>
-            <img src="{{data.img.url}}" alt="" style="width: 90px;">
-            <b>Product Image : </b><input type="file" name="img" id="" value="{{data.img}}">
-            <input type="submit" value="Add">
-        </form>
-    </div>
+            <div class="input-tag">
+                <b>Product id : </b><input type="text" name="pro_id" id="" placeholder="product id" class="p_id" value="{{data.product_id}}">
+            </div>
+            <div class="input-tag">
+                <b>Product name : </b><input type="text" name="name" id="" placeholder="product name" value="{{data.product_name}}">
+            </div>
+            <div class="input-tag">
+                <b>Product discription : </b><input type="text" name="discription" id="" placeholder="discription" value="{{data.dis}}">
+            </div>
+            <div class="input-tag">
+                <b>Price : </b><input type="number" name="price" id="" placeholder="price" value="{{data.price}}">
+            </div>
+            <div class="input-tag">
+                <b>Offer Price : </b><input type="number" name="o_price" id="" placeholder="offer price" value="{{data.offer_price}}">
+            </div>
+            <div class="input-tag">
+                <img src="{{data.img.url}}" alt="" style="width: 90px;">
+            </div>
+            <div class="input-tag">
+                <b>Product Image : </b><input type="file" name="img" id="" value="{{data.img}}">
+            </div>
+        
+            <div class="input-tag">
+                <input type="submit" value="Add">
+            </div>
+        </div>
+    </form> 
 </body>
 </html>
