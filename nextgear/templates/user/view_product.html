@@ -8,7 +8,141 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><img src="static/image/nextgearlogo.png" alt="" style="width: 60px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="bookings">Bookings</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="shop_login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout">Logout</a>
+                    </li>    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="line" style="background-color: whitesmoke; width: 100%; height: 25px; color: white; font-size: 13px; padding-left: 33%;"></div>
+            
+ <div class="container mt-5">
+    <div class="row">
+      <!-- Product Image Section -->
+      <div class="col-md-6 text-center">
+        <img src="{{data.img.url}}" alt="{{ product.name }}" class="img-fluid rounded shadow-sm">
+      </div>
+  
+      <!-- Product Information Section -->
+      <div class="col-md-6">
+        <h4 class="fw-bold">{{data.product_name}}</h4>
+        <!-- <p><strong>Category:</strong> {{ product.category.name }}</p> -->
+        <!-- <p><strong>Weight:</strong> {{ product.weight }} g</p> -->
+        <p><strong> Price:</strong> {{data.price}}</p>
+        <p><strong>Offer Price:</strong> {{data.offer_price}}</p>
+        <p><strong>Description:</strong> {{data.dis}}</p>
+  
+        <!-- Cart Status -->
+        {% if cart %}
+        <div class="alert alert-info mt-3">
+          <strong>Item already in your cart.</strong>
+        </div>
+        {% else %}
+        <div class="mt-4">
+          <a href="../buy_pro/{{ product.pk }}" class="btn btn-dark mb-3" style="width: 100%;">Buy Now</a><br>
+          <a href="../add_to_cart/{{ product.pk }}" class="btn btn-outline-dark mb-3" style="width: 100%;">Add to Cart</a>
+          {% if cart %}
+          <a href="../cart_display" class="btn btn-outline-dark">Go to Cart</a>
+          {% endif %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="ftr" style="padding-top: 2%">
+    <footer class="text-dark pt-5 mt-3" style="font-size: 15px; background-color: #f8f9fa; border-top: 3px solid #d1d1d1;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding: 20px;">
+                    <h6><i class="fas fa-gem"></i> Our Collections</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-necklace"></i> Helmets</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-ring"></i> Jackets</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-cogs"></i> Gloves</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-ear"></i> Riding Pants</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-clock"></i> Boots</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-gem"></i> Motorcycle Accesories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding: 20px;">
+                    <h5><i class="fas fa-question-circle"></i> Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-user-circle"></i> My Account</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-shipping-fast"></i> Shipping & Return Policy</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-cogs"></i> Care Instructions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding: 20px;">
+                    <h6><i class="fas fa-map-marker-alt"></i> Get in Touch</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-building"></i> Company</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-map-marker-alt"></i> India</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-map-marker-alt"></i> Kerala</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-map-marker-alt"></i> Trivandrum</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-envelope"></i> Email:nextgear665@gmail.com</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-envelope"></i> contact@Nextgear.com</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-phone"></i> Contact No:</a></li>
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-phone"></i> +91 8605234123</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding: 20px;">
+                    <h6><i class="fas fa-envelope-open"></i> Stay Up to Date</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="text-decoration: none; color: #555;"><i class="fas fa-paper-plane"></i> Sign up for our Newsletter</a></li>
+                        <br>
+                        <h6><i class="fas fa-share-alt"></i> Follow Us</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#" style="text-decoration: none; color: #555;"><i class="fab fa-instagram"></i> Instagram</a></li>
+                            <li><a href="#" style="text-decoration: none; color: #555;"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                            <li><a href="#" style="text-decoration: none; color: #555;"><i class="fab fa-twitter"></i> Twitter</a></li>
+                            <li><a href="#" style="text-decoration: none; color: #555;"><i class="fab fa-pinterest"></i> Pinterest</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr style="border-top: 2px solid #ddd;">
+        <div style="background-color: #333; color: #fff; text-align: center; padding: 15px 0;">
+            <p style="margin: 0;">&copy; 2025 Nextgear. All Rights Reserved.</p>
+        </div>
+    </footer>
+  </div>
+  
+  
+  </div>
+  <!-- Bootstrap JS & Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0dlnM+6b9rItc97g6zUl+a+Gy6pQ5Z2v5/RtWgkLQun7dp7r" crossorigin="anonymous"></script>
+ 
+</body>
+</html>
+
+    <!-- <div class="container">
         <div class="row">
 
             <div class="col-sm-4 ">
@@ -32,4 +166,4 @@
         </div>
     </div>
 </body>
-</html>
+</html> -->
