@@ -32,13 +32,6 @@
   }
 }
 
-
-
-
-
-
-
-
 /* Make the carousel height responsive */
 .carousel-item img {
   width: 100%; /* Full width of the container */
@@ -67,42 +60,53 @@
   background-color: black; /* Make control icons more visible */
 }
 
+@media (max-width: 992px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
 
-  </style>
+@media (max-width: 768px) {
+  .card-body {
+    padding: 15px;
+  }
+}
+
+
+</style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">
-      <img src="static/image/nextgearlogo.png" alt="Logo" style="width: 60px;">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">HOME</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="add_product">ADD PRODUCT</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="javascript:void(0)">BOOKINGS</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="logout">LOGOUT</a>
-        </li>
-      </ul>
-      <form class="d-flex mt-2 mt-sm-0">
-        <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-primary" type="button">Search</button>
-      </form>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="javascript:void(0)">
+        <img src="static/image/nextgearlogo.png" alt="Logo" style="width: 60px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-controls="mynavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="add_product">ADD PRODUCT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">BOOKINGS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="logout">LOGOUT</a>
+          </li>
+        </ul>
+        <form class="d-flex mt-2 mt-sm-0">
+          <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
     </div>
-  </div>
-</nav>
-
+  </nav>
 
 
 
@@ -145,51 +149,129 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
+
+
+
+
+
+  <!-- <div>
+    <h2>PRODUCTS</h2>
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+      {% for pro in products %}
+      <div class="col-lg-4 mt-4">
+        <div class="card" style="width:400px">
+          <img src="{{pro.img.url}}" alt="" class="card-img-top" style="width: 100%;">
+          <div class="card-body">
+            <h4 class="card-title">{{pro.product_name}}</h4>
+            <p class="card-text fw-light fw-secondary">{{pro.price}}</p>
+            <p class="card-text"><b>{{pro.offer_price}}</b></p>
+            <p class="card-text mt-3">{{pro.dis}}</p>
+            <div>
+              <a href="edit_product/{{pro.pk}}" class="btn">EDIT</a>
+              <a href="delete_product/{{pro.pk}}" class="btn">DELETE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div> -->
+
+
+
+  <div class="mt-4" style="text-align: center;">
+    <h2>PRODUCTS</h2>
+  </div>
+  
+  <div class="container mt-4">
+    <div class="row">
+      {% for pro in products %}
+      <div class="col-lg-4 col-md-6 col-sm-12 mt-4">
+        <div class="card" style="width: 100%; max-width: 400px;">
+          <img src="{{pro.img.url}}" alt="" class="card-img-top" style="width: 100%;">
+          <div class="card-body">
+            <h4 class="card-title">{{pro.product_name}}</h4>
+            <p class="card-text fw-light text-muted">{{pro.price}}</p>
+            <p class="card-text"><b>{{pro.offer_price}}</b></p>
+            <p class="card-text mt-3">{{pro.dis}}</p>
+            <div class="d-flex justify-content-between">
+              <a href="edit_product/{{pro.pk}}" class="btn btn-primary">EDIT</a>
+              <a href="delete_product/{{pro.pk}}" class="btn btn-danger">DELETE</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
   
 
 
 
+  <div style="padding-top: 2%">
+    <footer class="text-dark pt-5 mt-3" style="font-size: 20px; background-color:black; border-top: 1px  ">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" style="padding: 20px;">
+                    <b><h5 style="color: goldenrod;font-size: 25px;"> Our Collections</h5></b>
+                    <ul class="list-unstyled">
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Helmets</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Jackets</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Gloves</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Riding Pants</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Boots</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Motorcycle Accesories</a></li>
+                    </ul>
+                </div>
 
-
-
-
-
-
-
-    
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
-
-
-<div>
-  <h2>Products</h2>
-</div>
-<div class="container mt-4">
-  <div class="row">
-    {% for pro in products %}
-    <div class="col-lg-4 mt-4">
-      <div class="card" style="width:400px">
-        <img src="{{pro.img.url}}" alt="" class="card-img-top" style="width: 100%;">
-        <div class="card-body">
-          <h4 class="card-title">{{pro.product_name}}</h4>
-          <p class="card-text fw-light fw-secondary">{{pro.price}}</p>
-          <p class="card-text"><b>{{pro.offer_price}}</b></p>
-          <p class="card-text mt-3">{{pro.dis}}</p>
-          <div>
-            <a href="edit_product/{{pro.pk}}" class="btn">EDIT</a>
-            <a href="delete_product/{{pro.pk}}" class="btn">DELETE</a>
-          </div>
+            
+                <div class="col-md-3" style="padding: 20px;">
+                    <h5 style="color: goldenrod;font-size: 25px;">Customer Service</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" style="text-decoration: none; color: rgb(78, 78, 78);"><i class="fas fa-user-circle"></i> My Account</a></li>
+                        <li><a href="#" style="text-decoration: none; color: rgb(78, 78, 78);"><i class="fas fa-shipping-fast"></i> Shipping & Return Policy</a></li>
+                        <li><a href="#" style="text-decoration: none; color: rgb(78, 78, 78);"><i class="fas fa-lock"></i> Privacy Policy</a></li>
+                        <li><a href="#" style="text-decoration: none; color: rgb(78, 78, 78);"><i class="fas fa-file-contract"></i> Terms & Conditions</a></li>
+                        <li><a href="#" style="text-decoration: none; color: rgb(78, 78, 78);"><i class="fas fa-cogs"></i> Care Instructions</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding: 20px;">
+                    <h6 style="color: goldenrod;font-size: 25px;">Get in Touch</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Company</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> India</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Kerala</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Trivandrum</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Email:nextgear665@gmail.com</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">contact@Nextgear.com</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);"> Contact No:</a></li>
+                        <li><a href="" style="text-decoration: none; color: rgb(124, 124, 124);">+91 8605234123</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3" style="padding: 20px;">
+                    <h6 style="color: goldenrod;font-size: 25px;"> Stay Up to Date</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);;">Sign up for our Newsletter</a></li>
+                        <br>
+                        <h6 style="color: goldenrod;font-size: 15px;">Follow Us</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Instagram</a></li>
+                            <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Facebook</a></li>
+                            <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Twitter</a></li>
+                            <li><a href="" style="text-decoration: none; color: rgb(78, 78, 78);">Pinterest</a></li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
+        <hr style="border-top: 2px solid ;">
+        <div style="background-color: rgb(78, 78, 78); color: #fff; text-align: center; padding: 15px 0;">
+            <p style="margin: 0;">&copy; 2025 Nextgear. All Rights Reserved.</p>
+        </div>
+    </footer>
+</div>
 </div>
       
 </body>

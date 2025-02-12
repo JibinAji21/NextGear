@@ -100,14 +100,6 @@ def delete_product(req,id):
 
 
 
-
-
-
-
-
-
-
-
 def user_home(req):
     # if 'user' in req.session:
         data=Product.objects.all()
@@ -146,3 +138,14 @@ def view_cart(req):
     return render(req,'user/cart_display.html')
 
 
+def helmets(req):
+    product=Product.objects.all()
+    return render(req,'user/helmets.html',{'products':product})
+
+def jackets(req):
+    product=Product.objects.all()
+    return render(req,'user/jackets.html',{'products':product})
+
+def gloves(req):
+    product=Product.objects.all()
+    return render(req,'user/gloves.html',{'products':product})
